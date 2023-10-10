@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+  
+  </style>
+  <body>
+    <h2>Enter Total Distance of travelled : <input type="number" id="km" /></h2>
+    <br />
+    <h2>Enter your vehicle's average : <input type="number" id="average" /></h2>
+    <br />
+    <h2>Enter Fule Cost : <input type="number" id="fc" /></h2>
+    <br />
+    <h2>Enter the food cost : <input type="number" id="food" /></h2>
+    <br />
+    <h2>Enter the hotel cost : <input type="number" id="h" /></h2>
+    <br />
+    <h2>Enter the number of pasangers : <input type="number" id="p" /></h2>
+    <br />
+   
+
+    <input type="submit" onclick="timeCal()" />
+
+    <h2 id="result2"></h2>
+<br>
+<h2 id="result3 "></h2>
+<br>
+    <h2 id="result"></h2>
+
+  </body>
+  <script>
+    function timeCal() {
+      var k = parseInt(document.getElementById("km").value);
+      var a = parseInt(document.getElementById("average").value);
+      var f = parseInt(document.getElementById("fc").value);
+      var p = parseInt(document.getElementById("p").value);
+      var food = parseInt(document.getElementById("food").value);
+      var h = parseInt(document.getElementById("h").value);
+
+
+
+      console.log(k, "total km of trip");
+      console.log(a, "vehicle average");
+      console.log(f, "fule cost");
+      console.log(p, "total pasangers");
+      console.log(food, "total food cost");
+      console.log(h, "total hotel cost");
+
+
+        let onlyFule=((k / a) * f);
+
+        let extraCost=(food+h);
+
+      let fuleCost = (((k / a) * f)+food+h) / p;
+
+      document.getElementById("result2").innerHTML = "total fule cost = ₹"+ onlyFule;
+
+      document.getElementById("result3").innerHTML = "extra cost(food,hotel) = ₹"+ extraCost;
+
+      document.getElementById("result").innerHTML = "Per person Cost on travelling = " + "₹" +fuleCost;
+    }
+  </script>
+</html>
